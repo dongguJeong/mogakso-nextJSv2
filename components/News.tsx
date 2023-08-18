@@ -3,7 +3,7 @@ import { ContentsProps } from "@/pages/api/fetch";
 import { IPop } from "@/pages/api/fetch";
 import { INews } from "@/pages/api/fetch";
 
-const News  = ({word,data } : ContentsProps) => {
+const News  = (prop : any) => {
     
 
     const [pop, setPop] = useState(false);
@@ -13,7 +13,7 @@ const News  = ({word,data } : ContentsProps) => {
 
     const handleClick = (title : string) => {
         setPop((cur) => true);
-        const selected = data.find((i) => i.title === title);
+        const selected = prop.data.find((i : any) => i.title === title);
         setPopNews(selected);
 
     }
@@ -37,11 +37,11 @@ const News  = ({word,data } : ContentsProps) => {
         
             <div className="w-[650px] m-auto h-60 bg-white rounded-lg font-extrabold text-5xl flex justify-center 
                             items-center border-2 border-solid border-[#394867] underline underline-offset-8 cursor-pointer">
-                <span>{word}</span>
+                <span>{prop.word }</span>
             </div>
 
             <div className="flex flex-col space-y-5 text-3xl w-[650px] m-auto items-center mt-16">
-                {data.map((news: INews,index : number) => 
+                {prop.data.map((news: INews,index : number) => 
                     <div key={index} className="flex bg-white w-full rounded-lg py-4 px-4 border-2 border-solid border-[#394867] items-center "> 
                         <img className="w-48 h-48  rounded-md mr-10" src={news.imgUrl} /> 
                         <div className="pt-8 hover:underline underline-offset-4 cursor-pointer" onClick={() =>handleClick(news.title)}>
