@@ -35,27 +35,28 @@ const News  = (prop : any) => {
         <>
 
         
-            <div className="w-[650px] m-auto h-60 bg-white rounded-lg font-extrabold text-5xl flex justify-center 
+            <div className="w-[650px] m-auto h-48 bg-white rounded-lg font-extrabold text-5xl flex justify-center 
                             items-center border-2 border-solid border-[#394867] underline underline-offset-8 cursor-pointer">
                 <span>{prop.word }</span>
             </div>
-
-            <div className="flex flex-col space-y-5 text-3xl w-[650px] m-auto items-center mt-16">
-                {prop.data.map((news: INews,index : number) => 
-                    <div key={index} className="flex bg-white w-full rounded-lg py-4 px-4 border-2 border-solid border-[#394867] items-center "> 
-                        <img className="w-48 h-48  rounded-md mr-10" src={news.imgUrl} /> 
-                        <div className="pt-8 hover:underline underline-offset-4 cursor-pointer" onClick={() =>handleClick(news.title)}>
-                            <div className="mb-8 text-lg">{removeHtmlTags(news.title)}</div>
-                            <div className="mb-8 text-sm">{news.desc}</div>
-                            <div className="text-sm mt-8">{news.press}</div>
-                            
+            
+            
+                <div className="flex flex-col items-center text-3xl  mt-16 space-y-5  ">
+                    {prop.data.map((news: INews,index : number) => 
+                        <div key={index} className="flex bg-white w-[650px] h-[280px] rounded-lg py-2 px-4 border-2 border-solid border-[#394867]  items-center "
+                             onClick={() =>handleClick(news.title)}
+                        > 
+                            <img className="w-50 h-32 mr-10 rounded-md " src={news.imgUrl} /> 
+                            <div className="pt-8 hover:underline underline-offset-4 cursor-pointer" >
+                                <div className="mb-8 text-lg">{removeHtmlTags(news.title)}</div>
+                                <div className="mb-8 text-sm">{news.desc}</div>
+                                <div className="text-sm mt-8">{news.press}</div>
+                            </div>
                         </div>
                         
-                    </div>
-                    
-                    )}
-
-            </div>
+                        )}
+                </div>
+           
 
 
             {
@@ -84,8 +85,13 @@ const News  = (prop : any) => {
                                 <span className="text-lg ">{popNews?.summary}</span>
                             </div>
                             <br/>
-                            <a href={popNews?.originUrl} className="cursor-pointer text-blue-400">{popNews?.originUrl}</a>
 
+                                <div className="flex w-full justify-center">
+                                <a href={popNews?.originUrl} className="cursor-pointe w-48 h-14 bg-blue-400 px-4 py-4 rounded-md text-white shadow-md text-center">
+                                    원본 기사 보러가기
+                                </a>
+                                </div>
+                           
                         
                         </div>
                     </div>

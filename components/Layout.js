@@ -61,15 +61,15 @@ function Layout({children}){
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "경제" ? "underline font-bold text-2xl" : "none"}`} 
                                     href="/">경제</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "정치" ? "underline font-bold text-2xl" : "none"}`}
-                                     href={{ pathname :'/category/[category]', query : {category : '정치' , mode : 101}}}>정치</Link>
+                                     href={{ pathname :'/category/[category]', query : {category : '정치' , mode : 100}}}>정치</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "사회" ? "underline font-bold text-2xl" : "none"}`} 
                                     href={{ pathname :'/category/[category]', query : {category : '사회' , mode : 102}}}>사회</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "생활문화" ? "underline font-bold text-2xl" : "none"}`} 
                                     href={{ pathname :'/category/[category]', query : {category : '생활문화' , mode : 103}}}>생활/문화</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "IT과학" ? "underline font-bold text-2xl" : "none"}`} 
-                                    href={{ pathname :'/category/[category]', query : {category : 'IT과학' , mode : 104}}}>IT/과학</Link>
+                                    href={{ pathname :'/category/[category]', query : {category : 'IT과학' , mode : 105}}}>IT/과학</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "세계" ? "underline font-bold text-2xl" : "none"}`} 
-                                    href={{ pathname :'/category/[category]', query : {category : '세계' , mode : 105}}}>세계</Link>
+                                    href={{ pathname :'/category/[category]', query : {category : '세계' , mode : 104}}}>세계</Link>
                             </div>
                         </div>
 
@@ -79,8 +79,8 @@ function Layout({children}){
 
             
 
-            <div className="mt-10 w-[1140px] m-auto bg-white pt-10  border-2 border-solid border-[#394867] rounded-xl shadow-xl">
-                <div className="pt-10 pb-5 mx-10 ">
+            <div className="mt-10 w-[1140px] m-auto   pt-10  border-2 border-solid border-[#394867] rounded-xl shadow-xl min-h-screen">
+                <div className="pt-10 pb-2 mx-10  ">
                 {children}
                 </div>
             </div>

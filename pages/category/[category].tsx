@@ -32,7 +32,7 @@ function Category() {
    
 
     return (
-        <div>
+        <div className='min-h-screen'>
            <KKeyword data = {Object.values(newsData)}/>
         </div>
     );

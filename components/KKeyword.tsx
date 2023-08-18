@@ -23,18 +23,21 @@ const KKeyword  = ( props : any) => {
         <>
 
         <Link href={`/keyword/${data[0]}`}>
-            <div className="w-[650px] m-auto h-60 bg-white rounded-lg font-extrabold text-5xl flex justify-center cursor-pointer
-                            items-center border-2 border-solid border-[#394867] hover:underline underline-offset-[10px] focus:outline-none">
+            <div className="w-[600px] m-auto h-52 bg-white rounded-lg font-extrabold text-5xl flex justify-center cursor-pointer
+                            items-center border-2 border-solid border-[#394867] hover:underline underline-offset-[10px] focus:outline-none shadow-xl
+                            
+                            ">
                 <span>1.{data[0]}</span >
             </div>
         </Link>
 
-        <div className="flex flex-col space-y-5 text-3xl w-[650px] m-auto items-center mt-16">
+        <div className="grid grid-cols-3 text-3xl h-[150px] m-auto gap-4  mt-16">
             {selectedKeyword.map((keyword : any,i : number) => 
                 <Link href={`/keyword/${keyword}`} 
                       className="flex bg-white w-full rounded-lg py-4  justify-center
                                    border-2 border-solid border-[#394867] items-center
                                   cursor-pointer hover:underline underline-offset-8 focus:outline-none
+                                  shadow-xl
                                 "
                        key={i}           
                 >

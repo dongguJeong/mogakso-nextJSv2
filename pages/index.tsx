@@ -13,7 +13,7 @@ function Home(){
                 const fetchData = async () => {
                     try {
                         
-                        const response = await (await fetch(`http://songssam.site:8080/api/keyword?mode=0&sid1=100`,
+                        const response = await (await fetch(`http://songssam.site:8080/api/keyword?mode=0&sid1=101`,
                             {
                             method: "GET",
                             }
@@ -29,7 +29,7 @@ function Home(){
 
     return (
         <>
-           <KKeyword data = {Object.values(newsData)}/>
+           <KKeyword   data = {Object.values(newsData)}/>
         
     
         </>
