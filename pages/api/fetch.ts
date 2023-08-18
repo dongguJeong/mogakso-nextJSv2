@@ -8,12 +8,26 @@ export async function fetchData(keyword : string | undefined) {
             .json();
         
             return (res.response);
-       
         }catch(err){
          console.log(err);
     
     }
 };
+
+export async function fetchKeyword(mode : number) {
+    try {
+               
+        const response = await (await fetch(`http://songssam.site:8080/api/keyword?mode=0&sid1=${mode}`,
+            {
+              method: "GET",
+            }
+          )).json();
+        return (response.response);
+    } catch (err) {
+        console.error('API 요청 실패:', err);
+    }
+};
+
 
 
 export interface IPop{

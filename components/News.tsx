@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ContentsProps } from "@/pages/api/fetch";
 import { IPop } from "@/pages/api/fetch";
 import { INews } from "@/pages/api/fetch";
+import { useRouter } from "next/router";
 
 const News  = (prop : any) => {
     
@@ -9,6 +10,12 @@ const News  = (prop : any) => {
     const [pop, setPop] = useState(false);
     
     const [popNews, setPopNews] = useState<INews>();
+    const router = useRouter();
+
+    console.log( "쿼리는 ", router.query );
+    let mode = router.query.mode  === undefined ? String(101) : router.query.mode;
+
+   
     
 
     const handleClick = (title : string) => {
@@ -32,10 +39,10 @@ const News  = (prop : any) => {
     };
 
     return(
-        <>
+        <div className="w-[1000px] min-h-screen">
 
         
-            <div className="w-[650px] m-auto h-48 bg-white rounded-lg font-extrabold text-5xl flex justify-center 
+            <div className="w-[650px] mx-auto h-48 bg-white rounded-lg font-extrabold text-5xl flex justify-center 
                             items-center border-2 border-solid border-[#394867] underline underline-offset-8 cursor-pointer">
                 <span>{prop.word }</span>
             </div>
@@ -99,7 +106,7 @@ const News  = (prop : any) => {
                 </div> 
             }
 
-        </>
+        </div>
     )
 
 }

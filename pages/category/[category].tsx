@@ -3,14 +3,14 @@ import { useRouter } from 'next/router';
 import KKeyword from '@/components/KKeyword';
 
 
-
-
 function Category() {
     const router = useRouter();
     const search = router.query.category;
     const mode = router.query.mode;
 
     const [newsData, setNewsData] = useState([]);
+
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +33,7 @@ function Category() {
 
     return (
         <div className='min-h-screen'>
-           <KKeyword data = {Object.values(newsData)}/>
+           <KKeyword data = {Object.values(newsData)} />
         </div>
     );
 }

@@ -29,9 +29,7 @@ function Home(){
 
     return (
         <>
-           <KKeyword   data = {Object.values(newsData)}/>
-        
-    
+           <KKeyword   data = {Object.values(newsData)} />
         </>
     )
 }

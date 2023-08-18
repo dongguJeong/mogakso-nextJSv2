@@ -59,7 +59,7 @@ function Layout({children}){
                         <div className="w-full ">
                             <div className="font-bold grid grid-cols-6 ">
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "경제" ? "underline font-bold text-2xl" : "none"}`} 
-                                    href="/">경제</Link>
+                                    href={{ pathname :'/', query : { category : "경제", mode : 101}}}>경제</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "정치" ? "underline font-bold text-2xl" : "none"}`}
                                      href={{ pathname :'/category/[category]', query : {category : '정치' , mode : 100}}}>정치</Link>
                                 <Link className={`focus:outline-none hover:font-bold hover:text-2xl hover:underline underline-offset-8 ${router.query?.category === "사회" ? "underline font-bold text-2xl" : "none"}`} 
@@ -79,7 +79,7 @@ function Layout({children}){
 
             
 
-            <div className="mt-10 w-[1140px] m-auto   pt-10  border-2 border-solid border-[#394867] rounded-xl shadow-xl min-h-screen">
+            <div className="mt-10 w-[1140px] mx-auto   pt-10  border-2 border-solid border-[#394867] rounded-xl shadow-xl min-h-screen">
                 <div className="pt-10 pb-2 mx-10  ">
                 {children}
                 </div>
