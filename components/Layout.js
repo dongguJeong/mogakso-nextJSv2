@@ -45,7 +45,11 @@ function Layout({children}){
                                 </Link >
 
                                 <form className="w-32 h-8 " onSubmit={handleSubmit}>
-                                    <input className="w-full h-full px-2 py-2 border-[#212A3E] border-solid border-2 rounded-lg" onChange={handleOnChange} value={searchWord}></input>
+                                    <input className="w-full h-full px-3 py-4 border-[#212A3E] border-solid border-2 rounded-lg" 
+                                           onChange={handleOnChange} 
+                                           value={searchWord}
+                                           placeholder="검색"
+                                    ></input>
                                 </form>
                             </div> 
                         </div>

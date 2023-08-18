@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ContentsProps } from "@/pages/api/fetch";
 import { IPop } from "@/pages/api/fetch";
 import { INews } from "@/pages/api/fetch";
-import { RunningCodeInNewContextOptions } from "vm";
 
 const News  = ({word,data } : ContentsProps) => {
     
@@ -44,11 +43,12 @@ const News  = ({word,data } : ContentsProps) => {
             <div className="flex flex-col space-y-5 text-3xl w-[650px] m-auto items-center mt-16">
                 {data.map((news: INews,index : number) => 
                     <div key={index} className="flex bg-white w-full rounded-lg py-4 px-4 border-2 border-solid border-[#394867] items-center "> 
-                        <img className="w-48 h-48  rounded-md mr-10" src={news.img} /> 
+                        <img className="w-48 h-48  rounded-md mr-10" src={news.imgUrl} /> 
                         <div className="pt-8 hover:underline underline-offset-4 cursor-pointer" onClick={() =>handleClick(news.title)}>
                             <div className="mb-8 text-lg">{removeHtmlTags(news.title)}</div>
-                        
+                            <div className="mb-8 text-sm">{news.desc}</div>
                             <div className="text-sm mt-8">{news.press}</div>
+                            
                         </div>
                         
                     </div>
@@ -77,14 +77,14 @@ const News  = ({word,data } : ContentsProps) => {
                     </div>
                     <div>
                         <div className="text-center border-b-2 border-slate-300 border-solid pb-5 font-bold text-lg">
-                            <span>{popNews?.title} 제목</span>
+                            <span>{popNews?.title}</span>
                         </div>
                         <div className="px-10 py-5">
-                            <div className="mb-10">
+                            <div className="mb-8">
                                 <span className="text-lg ">{popNews?.summary}</span>
                             </div>
                             <br/>
-                            <a href={popNews?.origin} className="cursor-pointer text-blue-400">{popNews?.origin}</a>
+                            <a href={popNews?.originUrl} className="cursor-pointer text-blue-400">{popNews?.originUrl}</a>
 
                         
                         </div>

@@ -23,11 +23,12 @@ export interface IPop{
 }
 
 export interface INews{
-    origin : string ;
+    originUrl : string ;
     title : string;
     press : string;
-    img : string;
+    imgUrl : string;
     summary : string;
+    desc : string;
 }
 
 
